@@ -1,0 +1,32 @@
+%-----------------------------------------------------------------------------------------------------------------
+\chapter[Resultados]{Resultados}
+\label{Ch:Resultados}
+
+Exemplo de um algorítmo
+\begin{algorithmic}[1]
+\State $LeituraEscuro \gets Leitura da ADC antes do LED emissor ligar$
+	\State $LeituraLuz \gets Leitura da ADC depois do LED emissor ligar$ 
+    \State $LeituraReal \gets Leitura correta do valor dos sensores$ 
+    \State $Limit \gets Valorda ADC para o qual se considera proximidade da parede$ 
+\Repeat
+\State $LeituraEscuro \gets LerADC$
+\State $LEDEmissor \gets ON$
+\State $LeituraLuz \gets LerADC$
+\State $LEDEmissor \gets OFF$
+\State $LeituraReal \gets LeituraLuz - LeituraEscuro$
+
+\If {$LeituraReal < Limit$}
+    \State \Return $Nao ha parede$
+  \Else
+    \State \Return $Ha parede$
+  \EndIf
+
+\Until{$TodosSensoresLidos$}
+
+\end{algorithmic}
+
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------------
